@@ -11,38 +11,67 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <style>
         #videosList {
-            max-width: 600px;
-            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .blockVideo {
+            margin-bottom: 50px;
         }
 
         .video {
-            background-image: url('https://img.youtube.com/vi/nZcejtAwxz4/maxresdefault.jpg');
-            height: 330px;
             width: 600px;
-            margin-bottom: 50px;
+            height: 338px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .theVideo {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        p {
+            padding: 0.5rem;
+            text-align: center;
+            background-color: lightgrey;
+            color: white;
         }
     </style>
 </head>
-<body>
+<body style="">
     <div id="videosList">
-
-        <div class="video">
-            <video class="thevideo" loop preload="none">
-                <source src="https://giant.gfycat.com/VerifiableTerrificHind.mp4" type="video/mp4">
-                <source src="https://giant.gfycat.com/VerifiableTerrificHind.webm" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
+        <div class="blockVideo">
+            <div class="video" style="background-image: url('./privewFiles/Inkedv1_Moment.jpg'); background-size: contain;">
+                <video class="theVideo" loop="" preload="none">
+                    <source src="./privewFiles/Inkedv1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p>First video is <a href="https://ya.ru">here</a></p>
         </div>
-        Hover mouse over video.
 
-        <div class="video">
-            <video class="thevideo" loop preload="none">
-                <source src="https://giant.gfycat.com/VerifiableTerrificHind.mp4" type="video/mp4">
-                <source src="https://giant.gfycat.com/VerifiableTerrificHind.webm" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
+        <div class="blockVideo">
+            <div class="video" style="background-image: url('./privewFiles/Inkedv2_Moment.jpg'); background-size: contain;">
+                <video class="theVideo" loop="" preload="none">
+                    <source src="./privewFiles/Inkedv2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p>Second video is <a href="https://ya.ru">here</a></p>
         </div>
-        Hover mouse over video.
+
+        <div class="blockVideo">
+            <div class="video" style="background-image: url('./privewFiles/Inkedv3_Moment.jpg'); background-size: contain;">
+                <video class="theVideo" loop="" preload="none">
+                    <source src="./privewFiles/Inkedv3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p>Third video is <a href="https://ya.ru">here</a></p>
+        </div>
+
 
 
     </div>
@@ -57,5 +86,6 @@
             $('video', this).get(0).pause();
         }
     </script>
+
 </body>
 </html>
