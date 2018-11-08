@@ -1,91 +1,113 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Play video on hover</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Play video on hover</title>
 
-    <link rel="stylesheet" href="./css/videoBlock.css">
+        <link rel="stylesheet" href="./css/videoBlock.css">
 
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <style>
-        #videosList {
-            display: flex;
-            justify-content: space-between;
-        }
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <style>
+            #videosList {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
 
-        .blockVideo {
-            margin-bottom: 50px;
-        }
+            .blockVideo {
+                margin-bottom: 50px;
+                padding: 50px;
+            }
 
-        .video {
-            width: 600px;
-            height: 338px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+            .video {
+                width: 600px;
+                height: 338px;
+            }
 
-        .theVideo {
-            max-height: 100%;
-            max-width: 100%;
-        }
+            .theVideo {
+                max-height: 100%;
+                max-width: 100%;
+            }
 
-        p {
-            padding: 0.5rem;
-            text-align: center;
-            background-color: lightgrey;
-            color: white;
-        }
-    </style>
-</head>
-<body style="">
-    <div id="videosList">
-        <div class="blockVideo">
-            <div class="video" style="background-image: url('./privewFiles/Inkedv1_Moment.jpg'); background-size: contain;">
-                <video class="theVideo" loop="" preload="none">
-                    <source src="./privewFiles/Inkedv1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            p {
+                padding: 0.5rem;
+                text-align: left;
+                background-color: white;
+                color: grey;
+                display: inline-block;
+            }
+
+            div, p {
+                border: 1px grey dashed;
+                margin: 5px
+            }
+        </style>
+    </head>
+    <body style="">
+        <div id="videosList">
+
+            <div class="blockVideo">
+                <div class="video" style="background-image: url('./privewFiles/Inkedv1_Moment.jpg'); background-size: contain; background-repeat: no-repeat;">
+                    <video class="theVideo" loop="" preload="none">
+                        <source src="./privewFiles/Inkedv1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p>First video is <a href="https://ya.ru">here</a></p>
             </div>
-            <p>First video is <a href="https://ya.ru">here</a></p>
-        </div>
 
-        <div class="blockVideo">
-            <div class="video" style="background-image: url('./privewFiles/Inkedv2_Moment.jpg'); background-size: contain;">
-                <video class="theVideo" loop="" preload="none">
-                    <source src="./privewFiles/Inkedv2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <div class="blockVideo">
+                <div class="video" style="background-image: url('./privewFiles/Inkedv2_Moment.jpg'); background-size: contain;">
+                    <video class="theVideo" loop="" preload="none">
+                        <source src="./privewFiles/Inkedv2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p>Second video is <a href="https://ya.ru">here</a></p>
             </div>
-            <p>Second video is <a href="https://ya.ru">here</a></p>
-        </div>
 
-        <div class="blockVideo">
-            <div class="video" style="background-image: url('./privewFiles/Inkedv3_Moment.jpg'); background-size: contain;">
-                <video class="theVideo" loop="" preload="none">
-                    <source src="./privewFiles/Inkedv3.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <div class="blockVideo">
+                <div class="video" style="background-image: url('./privewFiles/Inkedv3_Moment.jpg'); background-size: contain;">
+                    <video class="theVideo" loop="" preload="none">
+                        <source src="./privewFiles/Inkedv3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p>Third video is <a href="https://ya.ru">here</a></p>
             </div>
-            <p>Third video is <a href="https://ya.ru">here</a></p>
+
+            <div class="blockVideo">
+                <div class="video" style="background-image: url('./privewFiles/Inkedv2_Moment.jpg'); background-size: contain;">
+                    <video class="theVideo" loop="" preload="none">
+                        <source src="./privewFiles/Inkedv2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p>Second video is <a href="https://ya.ru">here</a></p>
+            </div>
+
+            <div class="blockVideo">
+                <div class="video" style="background-image: url('./privewFiles/Inkedv1_Moment.jpg'); background-size: contain;">
+                    <video class="theVideo" loop="" preload="none">
+                        <source src="./privewFiles/Inkedv1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p>First video is <a href="https://ya.ru">here</a></p>
+            </div>
+
         </div>
+        <script>
+            let figure = $(".video").hover(hoverVideo, hideVideo);
 
+            function hoverVideo(e) {
+                $('video', this).get(0).play();
+            }
 
+            function hideVideo(e) {
+                $('video', this).get(0).pause();
+            }
+        </script>
 
-    </div>
-    <script>
-        let figure = $(".video").hover(hoverVideo, hideVideo);
-
-        function hoverVideo(e) {
-            $('video', this).get(0).play();
-        }
-
-        function hideVideo(e) {
-            $('video', this).get(0).pause();
-        }
-    </script>
-
-</body>
+    </body>
 </html>
