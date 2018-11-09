@@ -5,94 +5,59 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Play video on hover</title>
 
+        <!-- данную строку необходимо вставить также между head -->
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <style>
-            #videosList {
+
+        <!-- <style>
+            /* #videosList {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-            }
+            } */
 
-            .blockVideo {
-                margin-bottom: 50px;
-                padding: 50px;
-            }
-
-            .video {
+            /* .video {
                 width: 600px;
                 height: 338px;
-            }
+            } */
 
-            .theVideo {
+            /* .theVideo {
                 max-height: 100%;
                 max-width: 100%;
-            }
+            } */
 
-            p {
-                padding: 0.5rem;
-                text-align: left;
-                background-color: white;
-                color: grey;
-                display: inline-block;
-            }
-
-            div, p {
-                border: 1px grey dashed;
-                margin: 5px
-            }
-        </style>
+        </style> -->
     </head>
-    <body style="">
+    <body>
+      <!-- список видео -->
         <div id="videosList">
 
-            <div class="blockVideo">
-                <div class="video" style="background-image: url('./privewFiles/Inkedv1_Moment.jpg'); background-size: contain; background-repeat: no-repeat;">
-                    <video class="theVideo" loop="" preload="none">
+          <!--
+          элемент видео - начало
+          -->
+            <div class="blockVideo" style="margin: 5px;">
+              <!--
+              при копировании новых файлов и данного блока надо корректировать в следующих местах:
+              url('./privewFiles/Inkedv1_Moment.jpg')
+              src="./privewFiles/Inkedv1.mp4"
+              height: 600px;
+              width: 338px;
+              -->
+                <div
+                  class="video"
+                  style="background-image: url('./privewFiles/Inkedv1_Moment.jpg');
+                  height: 600px;
+                  width: 338px;
+                  background-size: contain; background-repeat: no-repeat;">
+                    <video class="theVideo" loop="" preload="none" style="max-height: 100%; max-width: 100%">
                         <source src="./privewFiles/Inkedv1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <p>First video is <a href="https://ya.ru">here</a></p>
+                <!-- здесь может быть текст под видео -->
             </div>
+            <!--
+            элемент видео - конец
+            -->
 
-            <div class="blockVideo">
-                <div class="video" style="background-image: url('./privewFiles/Inkedv2_Moment.jpg'); background-size: contain;">
-                    <video class="theVideo" loop="" preload="none">
-                        <source src="./privewFiles/Inkedv2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <p>Second video is <a href="https://ya.ru">here</a></p>
-            </div>
-
-            <div class="blockVideo">
-                <div class="video" style="background-image: url('./privewFiles/Inkedv3_Moment.jpg'); background-size: contain;">
-                    <video class="theVideo" loop="" preload="none">
-                        <source src="./privewFiles/Inkedv3.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <p>Third video is <a href="https://ya.ru">here</a></p>
-            </div>
-
-            <div class="blockVideo">
-                <div class="video" style="background-image: url('./privewFiles/Inkedv2_Moment.jpg'); background-size: contain;">
-                    <video class="theVideo" loop="" preload="none">
-                        <source src="./privewFiles/Inkedv2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <p>Second video is <a href="https://ya.ru">here</a></p>
-            </div>
-
-            <div class="blockVideo">
-                <div class="video" style="background-image: url('./privewFiles/Inkedv1_Moment.jpg'); background-size: contain;">
-                    <video class="theVideo" loop="" preload="none">
-                        <source src="./privewFiles/Inkedv1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <p>First video is <a href="https://ya.ru">here</a></p>
-            </div>
 
         </div>
         <script>
